@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+    <meta http-equiv="Content-Language" content="ja">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="Keywords" content="VC++ MFC　DirectX D2D1 Gdiplus CImage">
+    <meta name="Description" content="VC++MFCによるサンプル・プログラム（ソースコード）">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+    <script type="text/javascript" src="ss25.js" charset="UTF-8"></script>
+    <link href="./style25.css" rel="stylesheet" type="text/css">
+
+    <title>VC++MFC　サンプルコード</title>
+
+</HEAD>
+
+<BODY>
+
+
+    <div class="dropdown" style="position:fixed; top:10px;
+        margin-left:auto; right:40px;z-index: 3;">
+        <button class="dropbtn">
+            <a href="index.html" style=" text-decoration: none;
+                 "><font color="#cccccc">ホームへ</font></a>
+        </button>
+        <div class="dropdown-content" style="line-height:10px">
+            <a href="imageViewer.html">imageViewer</a>
+            <a href="imageViewerD2D1.html">imageViewerD2D1</a>
+        </div>
+    </div>
+
+
+
+    <p style="word-wrap:break-word; position:relative; top:40px;  margin-left:20px;  margin-right:auto;
+            text-align:center; line-height: 40pt; font-family: メイリオ;font-size:140%;
+            color:#eeeeee; font-weight:lighter; letter-spacing: 0.1em;  z-index: 2;">
+        VC++MFC　サンプルコード　<font size="4">（Visual Studio 2022）</font><br />
+        <br />
+    </p>
+
+    <p style="word-wrap:break-word; position:relative; top:0px;  margin-left:240px;  margin-right:auto;
+           text-align:left; line-height: 40pt; font-family: メイリオ;font-size:140%;
+           color:#eeeeee; font-weight:lighter; letter-spacing: 0.1em;  z-index: 2;">
+        <font size="5" color="#00f000">imageViewer　</font>
+        <font size="3" color="#f0f0f0">Windows11</font><br />
+    </p>
+
+    <div style="position: relative; top: -20px;  width:72%;height: 2px; margin-left: auto; margin-right: 180px;">
+        <img src="img\\bbb1.PNG" border="0" align="top" hspace="0" vspace="0"
+             style="position: relative; top:0px; left:0px; border-color:#ffffff;z-index: 1;width:100%;height:2px;">
+    </div>
+
+
+    <p style="word-wrap:break-word; position:relative; width:600px; height:200px;
+        top:-20px; margin-left:200px;
+        margin-right:auto; text-align:left; line-height: 20pt; font-family: メイリオ;
+        font-size:110%;  color:#ffffff; font-weight:lighter; letter-spacing: 0.1em;
+        padding:20px; z-index: 2;">
+        ImageクラスおよびCImageクラスを用いた、画像ビューアーです。編集機能はありません
+        <br />
+        <br />
+        <font size="3" color="f0c0d0">
+            Imageクラスを用いて画像をロードした場合、alpha値が使われていようがいまいが、
+            すべて32ビットαチャンネル付きでロードされます。このことは後で、CImageによる
+            jpg→png変換セーブなどを簡単化するのに役立ちます。CImageでのロードも可能ですが、
+            alpha値が使われていれば32ビット、使わていなければ24ビットなど一律ではありません。
+            バッファを32ビットで統一しても、alpha値が無い場合にスクリーンに描画する場合は、
+            alpha=255を補ってやる必要があります。<br />
+            よって、ロードはImage、描画はCImageで行います。<br />
+            <br />
+        </font>
+        <br />
+        <font size="3" color="ffffff">
+            ■主な機能<br />
+            ・対応フォーマットは、jpg,bmp,png,tif<br />
+            ・ロード可能画像サイズ、16000×16000pixel<br />
+            ・スクリーンのセンター中心の、マウスホイールによるズーム<br />
+            ・マウスドラッグによる、スクロール<br />
+            ・フォーマット変換セーブ<br />
+        </font>
+    </p>
+    <div style="position:relative; top:-260px;  width:400px; height:300px;
+               left:500px; margin-left:auto;margin-right:700px;z-index: 2;">
+        <img src="img\\imageViewer.jpg">
+    </div>
+
+
+    <div id="button1" style="height: 40px; position: relative;
+       top: -280px; width: 360px; height: 100px;
+       margin-left: auto; margin-right: 220px;
+       text-align: left; line-height: 40pt; font-size: 100%;
+       font-weight: lighter; color: #ffffff;
+       letter-spacing: 0.1em; font-family:メイリオ; z-index: 2;">
+        <a href="https://github.com/tkpoly/works/releases/download/v1.0/imageViewer.zip" title="ダウンロード" color="000000" size="1">
+            ■<font color="f0f0f0">フリーダウンロード</font>
+            <font color="#00f000">imageViewer.zip</font><br />
+        </a>
+    </div>
+
+    <div style="height: 240px; position: relative;
+       top: -340px; width: 360px; height: 200px;
+       margin-left: auto; margin-right: 220px;
+       text-align: left; line-height: 16pt; font-size: 80%;
+       font-weight: lighter; color: #ffffff;
+       letter-spacing: 0.1em; font-family:メイリオ; z-index: 2;">
+
+        ＜内容＞<br />
+        ・imageViewer　　　フォルダ（.h .cpp）<br />
+        ・x64　　　　　　　 フォルダ（.exe）<br />
+        ・imageViewer.sln　ソリューション<br />
+        ・readme.txt
+    </div>
+
+
+    <br>
+    <br>
+
+</BODY>
+
+</HTML>
