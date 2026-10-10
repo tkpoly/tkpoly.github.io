@@ -1,18 +1,20 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <HTML>
 <HEAD>
+    <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
     <meta http-equiv="Content-Language" content="ja">
     <meta http-equiv="Content-Script-Type" content="text/javascript">
     <meta http-equiv="Content-Style-Type" content="text/css">
-    <meta name="Keywords" content="VC++ MFC　DirectX D2D1 Gdiplus CImage">
-    <meta name="Description" content="VC++MFCによるサンプル・プログラム（ソースコード）">
+    <meta name="Keywords" content="VC++ MFC �摜�r���[�A�[�@imageViewer D2D1 CImage">
+    <meta name="Description" content="VC++MFC D2D1�ɂ��摜�r���[�A�[�@imageViewer">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
 
 
     <script type="text/javascript" src="ss25.js" charset="UTF-8"></script>
     <link href="./style25.css" rel="stylesheet" type="text/css">
 
-    <title>VC++MFC　サンプルコード</title>
+    <title>VC++MFC�����D2D1�ɂ��摜�r���[�A�[�iimageViewer�j�T���v���R�[�h</title>
 
 </HEAD>
 
@@ -23,7 +25,7 @@
         margin-left:auto; right:40px;z-index: 3;">
         <button class="dropbtn">
             <a href="index.html" style=" text-decoration: none;
-                 "><font color="#cccccc">ホームへ</font></a>
+                 "><font color="#cccccc">�z�[����</font></a>
         </button>
         <div class="dropdown-content" style="line-height:10px">
             <a href="imageViewer.html">imageViewer</a>
@@ -33,16 +35,16 @@
 
 
     <p style="word-wrap:break-word; position:relative; top:40px;  margin-left:20px;  margin-right:auto;
-            text-align:center; line-height: 40pt; font-family: メイリオ;font-size:140%;
+            text-align:center; line-height: 40pt; font-family: ���C���I;font-size:140%;
             color:#eeeeee; font-weight:lighter; letter-spacing: 0.1em;  z-index: 2;">
-        VC++MFC　サンプルコード　<font size="4">（Visual Studio 2022）</font><br />
+        VC++MFC�@�T���v���R�[�h�@<font size="4">�iVisual Studio 2022�j</font><br />
         <br />
     </p>
 
     <p style="word-wrap:break-word; position:relative; top:0px;  margin-left:240px;  margin-right:auto;
-           text-align:left; line-height: 40pt; font-family: メイリオ;font-size:140%;
+           text-align:left; line-height: 40pt; font-family: ���C���I;font-size:140%;
            color:#eeeeee; font-weight:lighter; letter-spacing: 0.1em;  z-index: 2;">
-        <font size="5" color="#00f000">imageViewerD2D1　</font>
+        <font size="5" color="#00f000">imageViewerD2D1�@</font>
         <font size="3" color="#f0f0f0">Windows11</font><br />
     </p>
 
@@ -54,34 +56,34 @@
 
     <p style="word-wrap:break-word; position:relative; width:600px; height:200px;
         top:-20px; margin-left:200px;
-        margin-right:auto; text-align:left; line-height: 20pt; font-family: メイリオ;
+        margin-right:auto; text-align:left; line-height: 20pt; font-family: ���C���I;
         font-size:110%;  color:#ffffff; font-weight:lighter; letter-spacing: 0.1em;
         padding:20px; z-index: 2;">
-        D2D1を用いた画像ビューアーで、jpg,png,tif,bmpおよび標準的なRAWの表示が可能です。
-        編集機能はありません
+        D2D1��p�����摜�r���[�A�[�ŁAjpg,png,tif,bmp����ѕW���I��RAW�̕\�����\�ł��B
+        �ҏW�@�\�͂���܂���
         <br />
         <br />
         <font size="3" color="f0c0d0">
-            D2D1 は画像の描画機能を持ち、画像のロードにはWICImagingFactoryを使用します。
-            WIC は JPG や PNG などの標準フォーマットに加えて、Windows に登録されている
-            メーカーRAWコーデックに依存してRAW ファイル（例：CR2 など）を読み込むことが
-            できます。この場合、RAW の生データはメーカーRAWコーデックによって 簡易現像
-            （デモザイク＋簡易補正）され、RGB画像として取得されます。<br />
-            得られた RGB 画像を CImage（HDC）にコピーすることで、JPG/PNG/TIFF/BMPなどに
-            変換して保存できます。ただし、カメラ側で設定した詳細な現像パラメータ
-            （ピクチャースタイル、露出補正など）は反映されません。<br />
-            また、D2D1 は RGB 値に A が乗算されたD2D1_ALPHA_MODE_PREMULTIPLIED を使用する
-            ため、アルファ処理は正確です。
+            D2D1 �͉摜�̕`��@�\�������A�摜�̃��[�h�ɂ�WICImagingFactory���g�p���܂��B
+            WIC �� JPG �� PNG �Ȃǂ̕W���t�H�[�}�b�g�ɉ����āAWindows �ɓo�^����Ă���
+            ���[�J�[RAW�R�[�f�b�N�Ɉˑ�����RAW �t�@�C���i��FCR2 �Ȃǁj��ǂݍ��ނ��Ƃ�
+            �ł��܂��B���̏ꍇ�ARAW �̐��f�[�^�̓��[�J�[RAW�R�[�f�b�N�ɂ���� �ȈՌ���
+            �i�f���U�C�N�{�ȈՕ␳�j����ARGB�摜�Ƃ��Ď擾����܂��B<br />
+            ����ꂽ RGB �摜�� CImage�iHDC�j�ɃR�s�[���邱�ƂŁAJPG/PNG/TIFF/BMP�Ȃǂ�
+            �ϊ����ĕۑ��ł��܂��B�������A�J�������Őݒ肵���ڍׂȌ����p�����[�^
+            �i�s�N�`���[�X�^�C���A�I�o�␳�Ȃǁj�͔��f����܂���B<br />
+            �܂��AD2D1 �� RGB �l�� A ����Z���ꂽD2D1_ALPHA_MODE_PREMULTIPLIED ���g�p����
+            ���߁A�A���t�@�����͐��m�ł��B
         </font>
         <br />
         <br />
         <font size="3" color="ffffff">
-            ■主な機能<br />
-            ・対応フォーマットは、標準的なRAWファイル（メーカーRAWコーデック依存）,jpg,bmp,png,tif<br />
-            ・ロード可能画像サイズ、16000×16000pixel<br />
-            ・スクリーンのセンター中心の、マウスホイールによるズーム<br />
-            ・マウスドラッグによる、スクロール<br />
-            ・フォーマット変換セーブ（RAWセーブはできません）<br />
+            ����ȋ@�\<br />
+            �E�Ή��t�H�[�}�b�g�́A�W���I��RAW�t�@�C���i���[�J�[RAW�R�[�f�b�N�ˑ��j,jpg,bmp,png,tif<br />
+            �E���[�h�\�摜�T�C�Y�A16000�~16000pixel<br />
+            �E�X�N���[���̃Z���^�[���S�́A�}�E�X�z�C�[���ɂ��Y�[��<br />
+            �E�}�E�X�h���b�O�ɂ��A�X�N���[��<br />
+            �E�t�H�[�}�b�g�ϊ��Z�[�u�iRAW�Z�[�u�͂ł��܂���j<br />
         </font>
     </p>
     <div style="position:relative; top:-260px;  width:400px; height:300px;
@@ -94,31 +96,26 @@
        margin-left: auto; margin-right: 180px;
        text-align: left; line-height: 40pt; font-size: 100%;
        font-weight: lighter; color: #ffffff;
-       letter-spacing: 0.1em; font-family:メイリオ; z-index: 2;">
-        <a href="https://github.com/tkpoly/works/releases/download/v1.3/imageViewerD2D1.zip" title="ダウンロード" color="000000" size="1">
-            ■<font color="f0f0f0">フリーダウンロード</font>
+       letter-spacing: 0.1em; font-family:���C���I; z-index: 2;">
+        <a href="https://github.com/tkpoly/works/releases/download/v1.3/imageViewerD2D1.zip" title="�_�E�����[�h" color="000000" size="1">
+            ��<font color="f0f0f0">�t���[�_�E�����[�h</font>
             <font color="#00f000">imageViewerD2D1.zip</font><br />
         </a>
     </div>
 
     <div style="height: 240px; position: relative;
-       top: -340px; width: 360px; height: 200px;
+       top: -340px; width: 360px; height: 100px;
        margin-left: auto; margin-right: 220px;
        text-align: left; line-height: 16pt; font-size: 80%;
        font-weight: lighter; color: #ffffff;
-       letter-spacing: 0.1em; font-family:メイリオ; z-index: 2;">
+       letter-spacing: 0.1em; font-family:���C���I; z-index: 2;">
 
-        ＜内容＞<br />
-        ・imageViewerD2D1　　　フォルダ（.h .cpp）<br />
-        ・x64　　　　　　　 　　 フォルダ（.exe）<br />
-        ・imageViewerD2D1.sln　ソリューション<br />
-	・README.md
+        �����e��<br />
+        �EimageViewerD2D1�@�@�@�t�H���_�i.h .cpp�j<br />
+        �Ex64�@�@�@�@�@�@�@ �@�@ �t�H���_�i.exe�j<br />
+        �EimageViewerD2D1.sln�@�\�����[�V����<br />
+	�EREADME.md
     </div>
-
-
-    <br>
-    <br>
-
 </BODY>
 
 </HTML>
