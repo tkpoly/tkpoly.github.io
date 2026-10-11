@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="ja">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="Keywords" content="DirectX11 ピクセルシェーダー　コンピュートシェーダー　ガンマ補正 imageEditor　">
+    <meta name="Description" content="imageEditorサンプルプログラム ソースコード">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script type="text/javascript" src="ss25.js" charset="UTF-8"></script>
+    <link href="./style25.css" rel="stylesheet" type="text/css">
+
+    <title>ピクセルシェーダーとコンピュートシェーダーによる、ガンマ補正、イメージエディター</title>
+</head>
+
+<body>
+
+
+    <div class="dropdown" style="position:fixed; top:10px;
+        margin-left:auto; right:40px;z-index: 3;">
+        <button class="dropbtn">
+            <a href="index.html" style=" text-decoration: none;
+                 "><font color="#cccccc">ホームへ</font></a>
+        </button>
+        <div class="dropdown-content" style="line-height:10px">
+            <a href="imageViewer.html">imageViewer</a>
+            <a href="imageViewerD2D1.html">imageViewerD2D1</a>
+            <a href="gammaCorrCS.html">gammaCorrCS</a>
+            <a href="imageEditor.html">imageEditor</a>
+            <a href="tessellation.html">tessellation</a>
+        </div>
+    </div>
+
+
+
+    <p style="word-wrap:break-word; position:relative; top:40px;  margin-left:20px;  margin-right:auto;
+            text-align:center; line-height: 40pt; font-family: メイリオ;font-size:140%;
+            color:#eeeeee; font-weight:lighter; letter-spacing: 0.1em;  z-index: 2;">
+        VC++MFC　サンプルコード　<font size="4">（Visual Studio 2022）</font><br />
+        <br />
+    </p>
+
+    <p style="word-wrap:break-word; position:relative; top:0px;  margin-left:240px;  margin-right:auto;
+           text-align:left; line-height: 40pt; font-family: メイリオ;font-size:140%;
+           color:#eeeeee; font-weight:lighter; letter-spacing: 0.1em;  z-index: 2;">
+        <font size="5" color="#00f000">imageEditor　</font>
+        <font size="3" color="#f0f0f0">Windows11</font><br />
+    </p>
+
+    <div style="position: relative; top: -20px;  width:72%;height: 2px; margin-left: auto; margin-right: 180px;">
+        <img src="img\\bbb1.PNG" border="0" align="top" hspace="0" vspace="0"
+             style="position: relative; top:0px; left:0px; border-color:#ffffff;z-index: 1;width:100%;height:2px;">
+    </div>
+
+
+    <p style="word-wrap:break-word; position:relative; width:600px; height:200px;
+        top:-20px; margin-left:200px;
+        margin-right:auto; text-align:left; line-height: 20pt; font-family: メイリオ;
+        font-size:110%;  color:#ffffff; font-weight:lighter; letter-spacing: 0.1em;
+        padding:20px; z-index: 2;">
+        DirectX11のピクセルシェーダーとコンピュート・シェーダー（CS）を利用して、
+        高速でガンマ補正、明度、コントラスト、彩度、ブラー、シャープネス調整を行います。<br/>
+        また、処理結果をCImageファッファへコピーし、フォーマット変換セーブを行います。
+        <br />
+        <br />
+        <font size="3" color="f0c0d0">
+            <br />
+        </font>
+        <br />
+        <font size="3" color="ffffff">
+            ■主な機能<br />
+            ・対応フォーマットは、jpg,bmp,png,tif,標準的なRAW<br />
+            ・ロード可能画像サイズ、16000×16000pixel<br />
+            ・スクリーンのセンター中心の、マウスホイールによるズーム<br />
+            ・マウスドラッグによる、スクロール（フォブ変換使用）<br />
+            ・フォーマット変換セーブ<br />
+        </font>
+    </p>
+    <div style="position:relative; top:-260px;  width:400px; height:300px;
+               left:500px; margin-left:auto;margin-right:700px;z-index: 2;">
+        <img src="img\\imageViewer.jpg">
+    </div>
+
+
+    <div id="button1" style="height: 40px; position: relative;
+       top: -280px; width: 360px; height: 100px;
+       margin-left: auto; margin-right: 220px;
+       text-align: left; line-height: 40pt; font-size: 100%;
+       font-weight: lighter; color: #ffffff;
+       letter-spacing: 0.1em; font-family:メイリオ; z-index: 2;">
+        <a href="" title="ダウンロード" color="000000" size="1">
+            ■<font color="f0f0f0">フリーダウンロード</font>
+            <font color="#00f000">imageEditor.zip</font><br />
+        </a>
+    </div>
+
+    <div style="height: 240px; position: relative;
+       top: -340px; width: 360px; height: 100px;
+       margin-left: auto; margin-right: 220px;
+       text-align: left; line-height: 16pt; font-size: 80%;
+       font-weight: lighter; color: #ffffff;
+       letter-spacing: 0.1em; font-family:メイリオ; z-index: 2;">
+
+        ＜内容＞<br />
+        ・imageEditor.exe　　　実行ファイル<br />
+        ・README.md
+    </div>
+
+</body>
+
+</html>

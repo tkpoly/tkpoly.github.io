@@ -7,16 +7,23 @@
 </url>
 
 <url>
-  <loc>https://tkpoly.github.io/testImage.html</loc>
+  <loc>https://tkpoly.github.io/imageViewer.html</loc>
 </url>
   
 <url>
-  <loc>https://tkpoly.github.io/testCImage.html</loc>
+  <loc>https://tkpoly.github.io/imageViewerD2D1.html</loc>
 </url>
 
 <url>
-  <loc>https://tkpoly.github.io/testD2D1.html</loc>
+  <loc>https://tkpoly.github.io/gammaCorrCS.html</loc>
 </url>
 
+<url>
+  <loc>https://tkpoly.github.io/imageEditor.html</loc>
+</url>
+
+  <url>
+    <loc>https://tkpoly.github.io/tessellation.html</loc>
+  </url>
 
 </urlset>
