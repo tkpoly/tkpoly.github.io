@@ -6,20 +6,19 @@
     <meta http-equiv="Content-Language" content="ja">
     <meta http-equiv="Content-Script-Type" content="text/javascript">
     <meta http-equiv="Content-Style-Type" content="text/css">
-    <meta name="Description" content="DirectX11 ピクセルシェーダー　コンピュートシェーダー　画像処理">
+    <meta name="Description" content="C++ MFC DirectX11 ピクセルシェーダー　コンピュートシェーダー　画像処理 imageEditor">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+      
     <script type="text/javascript" src="ss25.js" charset="UTF-8"></script>
     <link href="./style25.css" rel="stylesheet" type="text/css">
 
-    <title>ピクセルシェーダーとコンピュートシェーダーによる画像処理　ImageEditor</title>
+    <title>DirectX11のピクセルシェーダーとコンピュートシェーダーによる画像処理　ImageEditor</title>
 </head>
 
-<body>
-
+<body onLoad="moveLeft();" onresize="moveLeft();">
 
     <div class="dropdown" style="position:fixed; top:10px;
-        margin-left:auto; right:40px;z-index: 3;">
+        margin-left:auto; right:60px;z-index: 3;">
         <button class="dropbtn">
             <a href="index.html" style=" text-decoration: none;
                  "><font color="#cccccc">ホームへ</font></a>
@@ -34,80 +33,134 @@
     </div>
 
 
+    <div class="container">
 
-    <p style="word-wrap:break-word; position:relative; top:40px;  margin-left:20px;  margin-right:auto;
-            text-align:center; line-height: 40pt; font-family: メイリオ;font-size:140%;
+        <p style="position:relative; margin-top:20px;
+            height:auto;
+            margin-left:0px;  margin-right:auto;
+            text-align:center; line-height: 20pt;
+            font-family: メイリオ;font-size:120%;
             color:#eeeeee; font-weight:lighter; letter-spacing: 0.1em;  z-index: 2;">
-        VC++MFC　サンプルコード　<font size="4">（Visual Studio 2022）</font><br />
-        <br />
-    </p>
-
-    <p style="word-wrap:break-word; position:relative; top:0px;  margin-left:240px;  margin-right:auto;
-           text-align:left; line-height: 40pt; font-family: メイリオ;font-size:140%;
-           color:#eeeeee; font-weight:lighter; letter-spacing: 0.1em;  z-index: 2;">
-        <font size="5" color="#00f000">imageEditor　</font>
-        <font size="3" color="#f0f0f0">Windows11</font><br />
-    </p>
-
-    <div style="position: relative; top: -20px;  width:72%;height: 2px; margin-left: auto; margin-right: 180px;">
-        <img src="img\\bbb1.PNG" border="0" align="top" hspace="0" vspace="0"
-             style="position: relative; top:0px; left:0px; border-color:#ffffff;z-index: 1;width:100%;height:2px;">
-    </div>
-
-
-    <p style="word-wrap:break-word; position:relative; width:600px; height:200px;
-        top:-20px; margin-left:200px;
-        margin-right:auto; text-align:left; line-height: 20pt; font-family: メイリオ;
-        font-size:110%;  color:#ffffff; font-weight:lighter; letter-spacing: 0.1em;
-        padding:20px; z-index: 2;">
-        DirectX11のピクセルシェーダーとコンピュート・シェーダー（CS）を利用して、
-        高速でガンマ補正、明度、コントラスト、彩度、ブラー、シャープネス調整を行います。<br/>
-        また、処理結果をCImageファッファへコピーし、フォーマット変換セーブを行います。
-        <br />
-        <br />
-        <font size="3" color="f0c0d0">
+            VC++MFC　サンプルコード　<font size="4">（Visual Studio 2022）</font><br />
             <br />
-        </font>
-        <br />
-        <font size="3" color="ffffff">
-            ■主な機能<br />
-            ・対応フォーマットは、jpg,bmp,png,tif,標準的なRAW<br />
-            ・ロード可能画像サイズ、16000×16000pixel<br />
-            ・スクリーンのセンター中心の、マウスホイールによるズーム<br />
-            ・マウスドラッグによる、スクロール（フォブ変換使用）<br />
-            ・フォーマット変換セーブ<br />
-        </font>
-    </p>
-    <div style="position:relative; top:-260px;  width:400px; height:300px;
-               left:500px; margin-left:auto;margin-right:700px;z-index: 2;">
-        <img src="img\\imageViewer.jpg">
+        </p>
+
+
+
+        <div id="left1">
+            <p style="position: relative; margin-top: 0px;
+            height:auto;
+            margin-left: 0px; margin-right: auto;
+            text-align: left; line-height: 40pt; font-family: メイリオ;
+            font-size: 120%; color: #eeeeee; font-weight: lighter;
+            letter-spacing: 0.1em; z-index: 2;">
+                <font size="5" color="#00f000">imageEditor　</font>
+                <font size="3" color="#f0f0f0">Windows11</font><br />
+            </p>
+
+            <div style="position: relative; margin-top: -30px;
+            width: auto; height: 2px; margin-left: 0px; margin-right: 120px;">
+                <img src="img\\bbb1.PNG" border="0" align="top" hspace="0"
+                     vspace="0" style="position: relative; top:0px; left:0px;
+                border-color:#ffffff;z-index: 1;width:100%;height:2px;">
+            </div>
+
+
+            <p style="position: relative; width:auto;margin-top: 0px;
+            height: auto;
+            margin-left: 0px; margin-right: auto;
+            text-align: left; line-height: 20pt; font-family: メイリオ;
+            font-size: 110%; color: #ffffff; font-weight: lighter;
+            letter-spacing: 0.1em; padding: 20px; z-index: 2; ">
+                DirectX11のピクセルシェーダーとコンピュート・シェーダー（CS）を利用して、
+                高速でガンマ補正、明度、<br />
+                コントラスト、彩度、ブラー、シャープネス調整を行います。<br />
+                また、処理結果をCImageバッファーへコピーし、フォーマット変換セーブも可能です。
+                <br />
+                <br />
+                <font size="3" color="ffaa00">
+                    このページは、準備中です。
+                    <br />
+                </font>
+                <br />
+                <font size="3" color="ffffff">
+                    ■主な機能<br />
+                    ・トーンカーブによる、ガンマ補正<br />
+                    ・明度、コントラスト、彩度、ブラー、シャープネス調整<br />
+                    ・対応フォーマットは、jpg,bmp,png,tif,標準的なRAW<br />
+                    ・ロード可能画像サイズ、16000×16000pixel<br />
+                    ・スクリーンのセンター中心の、マウスホイールによるズーム（フォブ変換使用）<br />
+                    ・マウスドラッグによる、スクロール（フォブ変換使用）<br />
+                    ・DirectX座標系から、スクリーン座標系へのフォブ逆透視変換<br />
+                    ・スクリーン座標系から、DirectX座標系へのフォブ透視変換<br />
+                    ・フォーマット変換セーブ<br />
+                </font>
+                <br />
+                <font size="3" color="ffffff">
+                    ■特徴<br />
+                       <font color="e0e0ff">
+                           ・MFCメイン<br />
+                           ・ボタンクラス<br />
+                           ・エディター（パラメーター作成）クラス<br />
+                           ・DirectC11のDeviceのイニシャライズクラス<br />
+                           ・DrectX11の描画クラス<br />
+                           ・コンピュートシェーダーイニシャライズおよび実行クラス<br />
+                           ・共有ヘッダー<br />
+                           すべてクラス化しているので、個別の応用も可能です。
+                       </font>
+                </font>
+</p>
+
+            <div id="left2" style="position: relative; margin-left: 280px; margin-top: 0px;
+            width: auto; height: auto; margin-right: auto; z-index: 2; ">
+
+                <div id="left3" style="position: relative; margin-left: 0px; margin-top: 0px;
+            width: 500px; height: auto; margin-right: auto; z-index: 2; ">
+                    <img src="img\\imageEditor.jpg">
+                </div>
+
+
+                <div id="button1" style="position:  relative; margin-left: 0px;
+            margin-top: 20px; margin-right: auto;width: auto; height: auto;
+            text-align: left; line-height: 40pt; font-size: 100%;
+            font-weight: lighter; color: #ffffff;
+            letter-spacing: 0.1em; font-family:メイリオ; z-index: 2;">
+                    <a href="" title="ダウンロード" color="000000" size="1">
+                        ■<font color="f0f0f0">フリーダウンロード</font>
+                        <font color="#00f000">imageEditor.zip</font><br />
+                    </a>
+                </div>
+
+                <p style="height: 240px; position: relative; margin-left: 0px; margin-top: 0px;
+           margin-right: auto;width: auto; height: auto;
+           text-align: left; line-height: 16pt; font-size: 80%;
+           font-weight: lighter; color: #ffffff;
+           letter-spacing: 0.1em; font-family:メイリオ; z-index: 2;">
+
+                    ＜内容＞<br />
+                    ・imageEditor.exe　　　実行ファイル<br />
+                    <br />
+                    <br />
+                    <!--■<font size="3" color="f0a000">※全ソースファイルおよびソリューションファイルは、Boothにて入手可能です。（有料です）</font>
+                        -->
+                </p>
+            </div>
+        </div>
+
+        <div class="section:last-child">
+            <div style="position: relative; margin-top: 140px;
+                width: 100%; height: 100px;
+                margin-left: 0px; margin-right: 0px;
+                background-color:#606090;
+                text-align: left; line-height: 16pt; font-size: 80%;
+                font-weight: lighter; color: #ffffff;
+                letter-spacing: 0.1em;
+                padding-left: 10px;
+                font-family:メイリオ; z-index: 2;">
+                tkpoly studio
+            </div>
+        </div>
     </div>
-
-
-    <div id="button1" style="height: 40px; position: relative;
-       top: -280px; width: 360px; height: 100px;
-       margin-left: auto; margin-right: 220px;
-       text-align: left; line-height: 40pt; font-size: 100%;
-       font-weight: lighter; color: #ffffff;
-       letter-spacing: 0.1em; font-family:メイリオ; z-index: 2;">
-        <a href="" title="ダウンロード" color="000000" size="1">
-            ■<font color="f0f0f0">フリーダウンロード</font>
-            <font color="#00f000">imageEditor.zip</font><br />
-        </a>
-    </div>
-
-    <div style="height: 240px; position: relative;
-       top: -340px; width: 360px; height: 100px;
-       margin-left: auto; margin-right: 220px;
-       text-align: left; line-height: 16pt; font-size: 80%;
-       font-weight: lighter; color: #ffffff;
-       letter-spacing: 0.1em; font-family:メイリオ; z-index: 2;">
-
-        ＜内容＞<br />
-        ・imageEditor.exe　　　実行ファイル<br />
-        ・README.md
-    </div>
-
 </body>
 
 </html>

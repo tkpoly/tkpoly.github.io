@@ -5,8 +5,8 @@ body {
     padding: 0px;
     text-align: left;
     background-color: #494982; /*#305084;*/ /*f0f0fa;*/
-    //background-image: url("img\\a4.png");
-    //background-size: contain;
+    /*background-image: url("img\\a4.png");*/
+    /*background-size: contain;*/
     height: auto;
     overscroll-behavior: none;
 }
@@ -31,8 +31,7 @@ img {
 }
 
 
-
-
+/*背景----------------------------------------*/
 #back {
     width: 100%;
     height: 700px;
@@ -42,24 +41,10 @@ img {
 
 
 
-/*homeBT　現在未使用　*/
-#homeBT a{display:block; position: fixed; top: 20px;  width:100px; height:40px; z-index: 1;
-		font-style: normal; font-size: 110%; font-weight: bolder;/*700と同等*/
-     		font-family: "ＭＳ 明朝","ＭＳ ゴシック",sans-serif;
-		line-height:30px;	color:#c0c0c0;	text-decoration:none;	text-align:center;
-}
-#homeBT a:hover{display:block; position: fixed; top: 20px;  width:100px; height:30px; z-index: 1;
-        background-size: cover;
-		font-style: normal; font-size: 110%; font-weight: bolder;/*700と同等*/
-     		font-family: "ＭＳ 明朝","ＭＳ ゴシック",sans-serif;
-		line-height:30px;	color:#ffffff;	/*text-decoration:underline;*/	text-align:center;
-	
- }
 
 
 
-
-/*index.htmの選択ボタン　*/
+/*index.htmや、ダウンロードなどの選択ボタン----------------------------------------*/
 #button1 a{display:block; position: relative; top: 0px; 
         height:30px; z-index: 1;
 		background:url() no-repeat; 
@@ -67,16 +52,17 @@ img {
 		font-style: normal; font-size: 100%; font-weight:bolder;/*bolder=700と同等*/
      	font-family: "メイリオ";
 }
-#button1 a:hover{background:url() no-repeat;  /*text-decoration:none;*/text-decoration:underline; /*background-color:#0000ff;*/ 	
+#button1 a:hover{background:url() no-repeat;  
+                 /*text-decoration:none;*/
+                 text-decoration:underline; 
+                 /*background-color:#0000ff;*/ 	
 }
 
 
 
-/*link色を変えておく*/
-a {
-    color: #cccccc;
-}
 
+
+/*ドロップダウン・リスト--------------------------------------------------------*/
 /* ドロップボタンのスタイルを指定する */
 .dropbtn {
     background-color: transparent;/*#0000d0;*/
@@ -85,7 +71,7 @@ a {
     font-size: 16px;
     border: none;
     cursor: pointer;
-    width: 120px;
+    width: 160px;
     height: 60px;
     text-decoration: none;
     z-index: 2;
@@ -112,7 +98,7 @@ a {
 .dropdown-content {
     display: none;
     position: absolute;
-    margin-left: -30px;
+    margin-left: -10px;
     background-color: rgba(50,50,50,0.7); /*#505050;*/
     top:50px;
     width: 180px;
@@ -148,27 +134,38 @@ a {
     display: block;
 }
 
-/* ドロップダウンのコンテンツが表示されているときのドロップダウンボタンの背景色を変更 */
+/* ドロップダウンのコンテンツが表示されているときの*/
+/*ドロップダウンボタンの背景色を変更 */
 .dropdown:hover .dropbtn {
     background-color: transparent;/*#a0a0ff;*/
 }
 
 
-textarea {
-    position: relative;
-    outline: 0;
-    padding: 10px;
-    margin-left: 0px;
-    margin-right: 200px;
-    line-height: 20px;
-    font-weight: lighter;
-    font-size: 14px;
-    font-family: Meiryo;
-    color: #101010;
-    background: #d8d8f0; /*#a0c0c4;*/
-    z-index: 1;
+
+
+/*ページ最終行での、スクロール停止-----------------------------------------*/
+/* スクロールする親要素 */
+.container {
+    height: 100vh;/*auto*/
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory; /* 縦方向にスナップを強制 */
 }
 
+/* 各セクション（行） */
+.section {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background-color: #f0f0f0;
+    border-bottom: 2px solid #ccc;
+    scroll-snap-align: start; /* 通常は各行の先頭で止まる */
+}
 
-
+/* 最後の行（ここで完全に止めたい場合） */
+.section:last-child {
+    background-color: #ffcccc;
+    scroll-snap-align: end; /* 最終行の最下部でピタッと止める */
+}
 
