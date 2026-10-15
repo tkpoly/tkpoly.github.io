@@ -12,7 +12,7 @@
     <script type="text/javascript" src="ss25.js" charset="UTF-8"></script>
     <link href="./style25.css" rel="stylesheet" type="text/css">
 
-    <title>DirectX11のピクセルシェーダーとコンピュートシェーダーによる画像処理　ImageEditor</title>
+    <title>DirectX11のピクセルシェーダーとコンピュートシェーダーによる画像処理　imageEditor</title>
 </head>
 
 <body onLoad="moveLeft();" onresize="moveLeft();">
@@ -89,8 +89,8 @@
                     ・明度、コントラスト、彩度、ブラー、シャープネス調整<br />
                     ・対応フォーマットは、jpg,bmp,png,tif,標準的なRAW<br />
                     ・ロード可能画像サイズ、16000×16000pixel<br />
-                    ・スクリーンのセンター中心の、マウスホイールによるズーム（フォブ変換使用）<br />
-                    ・マウスドラッグによる、スクロール（フォブ変換使用）<br />
+                    ・スクリーンのセンター中心の、マウスホイールによるズーム（フォブ変換利用）<br />
+                    ・マウスドラッグによる、スクロール（フォブ変換利用）<br />
                     ・DirectX座標系から、スクリーン座標系へのフォブ逆透視変換<br />
                     ・スクリーン座標系から、DirectX座標系へのフォブ透視変換<br />
                     ・フォーマット変換セーブ<br />
@@ -98,27 +98,36 @@
                 <br />
                 <font size="3" color="ffffff">
                     ■特徴<br />
-                       <font color="e0e0ff">
-                           ・MFCメイン<br />
-                           ・ボタンクラス<br />
-                           ・エディター（パラメーター作成）クラス<br />
-                           ・DirectC11のDeviceのイニシャライズクラス<br />
-                           ・DrectX11の描画クラス<br />
-                           ・コンピュートシェーダーイニシャライズおよび実行クラス<br />
-                           ・共有ヘッダー<br />
-                           すべてクラス化しているので、個別の応用も可能です。
-                       </font>
+                    <font color="e0e0ff">
+                        ・MFCメイン<br />
+                        ・ボタンクラス<br />
+                        ・エディター（パラメーター作成）クラス<br />
+                        ・DirectC11のDeviceのイニシャライズクラス<br />
+                        ・DrectX11の描画クラス<br />
+                        ・コンピュートシェーダーイニシャライズおよび実行クラス<br />
+                        ・共有ヘッダー<br />
+                        すべてクラス化しているので、個別の応用も可能です。
+                    </font>
                 </font>
-</p>
+            </p>
 
-            <div id="left2" style="position: relative; margin-left: 280px; margin-top: 0px;
+            <div id="left2" style="position: relative; margin-left: 0px; margin-top: 0px;
             width: auto; height: auto; margin-right: auto; z-index: 2; ">
 
                 <div id="left3" style="position: relative; margin-left: 0px; margin-top: 0px;
             width: 500px; height: auto; margin-right: auto; z-index: 2; ">
-                    <img src="img\\imageEditor.jpg">
+                    <img src="img\\imageEditorA.jpg">
+                </div>
+                <div id="left4" style="position: relative; margin-left: 520px; margin-top: -286px;
+                    width: 500px; height: auto; margin-right: auto; z-index: 2; ">
+                    <img src="img\\imageEditorB.jpg">
                 </div>
 
+            </div>
+
+
+            <div id="left5" style="position: relative; margin-left: 40px; margin-top: 0px;
+                width: auto; height: auto; margin-right: auto; z-index: 2; ">
 
                 <div id="button1" style="position:  relative; margin-left: 0px;
             margin-top: 20px; margin-right: auto;width: auto; height: auto;
@@ -139,16 +148,28 @@
 
                     ＜内容＞<br />
                     ・imageEditor.exe　　　実行ファイル<br />
+
+                    コンパイル済シェーダー<br />
+                    ・VS.cso　　　　　　　バーテックスシェーダー<br />
+                    ・PS.cso　　　　　　　ピクセルシェーダー<br />
+                    ・gammaCS.cso　　　　　ガンマＣＳ（コンピュートシェーダー）<br />
+                    ・downscaleCS.cso　　　ダウンスケールＣＳ<br />
+                    ・boxbluCS.cso　　　　　ボックスブラーＣＳ<br />
+                    ・upscaleCS.cso　　　　　アップスケールＣＳ<br />
+                    ・sharpnessCS.cso　　　　シャープネスＣＳ<br />
+                    ・histCS.cso　　　　　　　ヒストグラムＣＳ<br />
+
                     <br />
                     <br />
                     <!--■<font size="3" color="f0a000">※全ソースファイルおよびソリューションファイルは、Boothにて入手可能です。（有料です）</font>
-                        -->
+    -->
                 </p>
             </div>
         </div>
 
-        <div class="section:last-child">
-            <div style="position: relative; margin-top: 140px;
+        <div id="left6">
+            <div class="section:last-child">
+                <div style="position: relative; margin-top: 140px;
                 width: 100%; height: 100px;
                 margin-left: 0px; margin-right: 0px;
                 background-color:#606090;
@@ -157,7 +178,8 @@
                 letter-spacing: 0.1em;
                 padding-left: 10px;
                 font-family:メイリオ; z-index: 2;">
-                tkpoly studio
+                    tkpoly studio
+                </div>
             </div>
         </div>
     </div>

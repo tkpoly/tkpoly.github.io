@@ -38,6 +38,14 @@ function moveLeft() {
     ele2 = document.getElementById("left2");
     var ele3;
     ele3 = document.getElementById("left3");
+    var ele4;
+    ele4 = document.getElementById("left4");
+    var ele5;
+    ele5 = document.getElementById("left5");
+    var ele6;
+    ele6 = document.getElementById("left6");
+
+
 
     if (w < 760) {
         ele1.style.position = "relative";
@@ -56,7 +64,27 @@ function moveLeft() {
         ele3.style.marginRight = "auto";
         ele3.style.width = "300px";
         ele3.style.height = "auto";
-   }
+
+        ele4.style.position = "relative";
+        ele4.style.top = "320px";
+        ele4.style.marginLeft = "0px";
+        ele4.style.marginRight = "auto";
+        ele4.style.width = "300px";
+        ele4.style.height = "auto";
+
+        ele5.style.position = "relative";
+        ele5.style.top = "320px";
+        ele5.style.marginLeft = "0px";
+        ele5.style.marginRight = "auto";
+
+        ele6.style.position = "relative";
+        ele6.style.top = "300px";
+        ele6.style.marginLeft = "0px";
+        ele6.style.marginRight = "auto";
+        ele6.style.width = "100%";
+        ele6.style.height = "100px";
+
+    }
     else {
         ele1.style.position = "relative";
         ele1.style.top = "0px";
@@ -65,7 +93,7 @@ function moveLeft() {
 
         ele2.style.position = "relative";
         ele2.style.top = "0px";
-        ele2.style.marginLeft = "200px";
+        ele2.style.marginLeft = "40px";
         ele2.style.marginRight = "auto";
 
         ele3.style.position = "relative";
@@ -73,8 +101,28 @@ function moveLeft() {
         ele3.style.marginLeft = "0px";
         ele3.style.marginRight = "auto";
         ele3.style.width = "500px";
-        ele3.style.height = "auto";
-   }
+        ele3.style.height = "300px";
+
+        ele4.style.position = "relative";
+        ele4.style.top = "-15px";
+        ele4.style.marginLeft = "520px";
+        ele4.style.marginRight = "auto";
+        ele4.style.width = "500px";
+        ele4.style.height = "300px";
+
+        ele5.style.position = "relative";
+        ele5.style.top = "0px";
+        ele5.style.marginLeft = "40px";
+        ele5.style.marginRight = "auto";
+
+        ele6.style.position = "relative";
+        ele6.style.top = "0px";
+        ele6.style.marginLeft = "0px";
+        ele6.style.marginRight = "auto";
+        ele6.style.width = "100%";
+        ele6.style.height = "100px";
+
+    }
 }
 
 

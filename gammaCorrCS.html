@@ -6,13 +6,13 @@
     <meta http-equiv="Content-Language" content="ja">
     <meta http-equiv="Content-Script-Type" content="text/javascript">
     <meta http-equiv="Content-Style-Type" content="text/css">
-    <meta name="Description" content="C++ MFC DirectX11　コンピュートシェーダー　ガンマ補正 Gamma correction">
+    <meta name="Description" content="C++ MFC DirectX11　コンピュートシェーダー　ガンマ補正 gamma correction">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
       
     <script type="text/javascript" src="ss25.js" charset="UTF-8"></script>
     <link href="./style25.css" rel="stylesheet" type="text/css">
 
-    <title>コンピュートシェーダーによるガンマ補正　GammaCorrCS</title>
+    <title>コンピュートシェーダーによるガンマ補正　gammaCorrCS</title>
 </head>
 
 <body onLoad="moveLeft();" onresize="moveLeft();">
@@ -99,52 +99,64 @@
                 </font>
             </p>
 
-            <div id="left2" style="position: relative; margin-left: 280px; margin-top: 0px;
-            width: auto; height: auto; margin-right: auto; z-index: 2; ">
+
+            <div id="left2" style="position: relative; margin-left: 0px; margin-top: 0px;
+                width: auto; height: auto; margin-right: auto; z-index: 2; ">
+
 
                 <div id="left3" style="position: relative; margin-left: 0px; margin-top: 0px;
-            width: 500px; height: auto; margin-right: auto; z-index: 2; ">
-                    <img src="img\\gammaCorrCS.jpg">
+                    width: 500px; height: auto; margin-right: auto; z-index: 2; ">
+                    <img src="img\\gammaCorrCSA.jpg">
+                </div>
+                <div id="left4" style="position: relative; margin-left: 520px; margin-top: -286px;
+                    width: 500px; height: auto; margin-right: auto; z-index: 2; ">
+                    <img src="img\\gammaCorrCSB.jpg">
                 </div>
 
+            </div>
 
+            <div id="left5"style="position: relative; margin-left: 40px; margin-top: 0px;
+                width: auto; height: auto; margin-right: auto; z-index: 2; ">
+                
                 <div id="button1" style="position:  relative; margin-left: 0px;
-            margin-top: 20px; margin-right: auto;width: 400px; height: auto;
-            text-align: left; line-height: 40pt; font-size: 100%;
-            font-weight: lighter; color: #ffffff;
-            letter-spacing: 0.1em; font-family:メイリオ; z-index: 2;">
-                    <a href="https://github.com/tkpoly/works/releases/download/v1.4/gammaCorrCS.zip" title="ダウンロード" color="000000" size="1">
-                        ■<font color="f0f0f0">フリーダウンロード</font>
-                        <font color="#00f000">gammaCorrCS.zip</font><br />
-                    </a>
-                </div>
+                margin-top: 20px; margin-right: auto;width: 400px; height: auto;
+                text-align: left; line-height: 40pt; font-size: 100%;
+                font-weight: lighter; color: #ffffff;
+                letter-spacing: 0.1em; font-family:メイリオ; z-index: 2;">
+                        <a href="https://github.com/tkpoly/works/releases/download/v1.4/gammaCorrCS.zip" title="ダウンロード" color="000000" size="1">
+                            ■<font color="f0f0f0">フリーダウンロード</font>
+                            <font color="#00f000">gammaCorrCS.zip</font><br />
+                        </a>
+                    </div>
 
-                <p style="height: 240px; position: relative; margin-left: 0px; margin-top: 0px;
-           margin-right: auto;width: auto; height: auto;
-           text-align: left; line-height: 16pt; font-size: 80%;
-           font-weight: lighter; color: #ffffff;
-           letter-spacing: 0.1em; font-family:メイリオ; z-index: 2;">
+                    <p style="height: 240px; position: relative; margin-left: 0px; margin-top: 0px;
+               margin-right: auto;width: auto; height: auto;
+               text-align: left; line-height: 16pt; font-size: 80%;
+               font-weight: lighter; color: #ffffff;
+               letter-spacing: 0.1em; font-family:メイリオ; z-index: 2;">
 
-                    ＜内容＞<br />
-                    ・gammaCorrCS　　　フォルダ（.h .cpp .hlsl）<br />
-                    ・x64　　　　　　　  　　フォルダ（.exe）<br />
-                    ・gammaCorrCS.sln　ソリューション<br />
-                    ・README.md
-                </p>
+                        ＜内容＞<br />
+                        ・gammaCorrCS　　　フォルダ（.h .cpp .hlsl）<br />
+                        ・x64　　　　　　　  　　フォルダ（.exe）<br />
+                        ・gammaCorrCS.sln　ソリューション<br />
+                        ・README.md
+                    </p>
             </div>
         </div>
 
-        <div class="section:last-child">
-            <div style="position: relative; margin-top: 140px;
-                width: 100%; height: 100px;
-                margin-left: 0px; margin-right: 0px;
-                background-color:#606090;
-                text-align: left; line-height: 16pt; font-size: 80%;
-                font-weight: lighter; color: #ffffff;
-                letter-spacing: 0.1em;
-                padding-left: 10px;
-                font-family:メイリオ; z-index: 2;">
-                tkpoly studio
+        <div id="left6">
+            <div class="section:last-child">
+                <div style="position: relative; margin-top: 140px;
+                    width: 100%; height: 100px;
+                    margin-left: 0px; margin-right: 0px;
+                    background-color:#606090;
+                    text-align: left; line-height: 16pt; font-size: 80%;
+                    font-weight: lighter; color: #ffffff;
+                    letter-spacing: 0.1em;
+                    padding-left: 10px;
+                    font-family:メイリオ; z-index: 2;">
+                    tkpoly studio
+                </div>
             </div>
         </div>
     </div>
