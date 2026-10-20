@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="ja">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="Description" content="C++ MFC Image CImage 画像編集">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+      
+    <script type="text/javascript" src="ss25.js" charset="UTF-8"></script>
+    <link href="./style25.css" rel="stylesheet" type="text/css">
+
+    <title>画像編集＋回転式透明テキストエディター</title>
+</head>
+
+<body onLoad="moveLeft();" onresize="moveLeft();">
+
+    <div class="dropdown" style="position:fixed; top:70px;
+        margin-left:auto; right:80px;z-index: 3;">
+        <button class="dropbtn">
+            <a href="index.html" style=" text-decoration: none;
+                 "><font color="#dddddd">ホームへ</font></a>
+        </button>
+        <div class="dropdown-content" style="line-height:10px">
+            <a href="imageViewer.html">imageViewer</a>
+            <a href="imageViewerD2D1.html">imageViewerD2D1</a>
+            <a href="gammaCorrCS.html">gammaCorrCS</a>
+            <a href="imageEditor.html">imageEditor</a>
+            <a href="tessellation.html">tessellation</a>
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <p style="position:relative; margin-top:20px;
+            height:auto;
+            margin-left:0px;  margin-right:auto;
+            text-align:center; line-height: 20pt;
+            font-family: メイリオ;font-size:120%;
+            color:#eeeeee; font-weight:lighter; letter-spacing: 0.1em;  z-index: 2;">
+            VC++MFC　サンプルコード　<font size="4">（Visual Studio 2022）</font><br />
+            <br />
+        </p>
+
+        <div id="left1">
+            <p style="position: relative; margin-top: 0px;
+            height:auto;
+            margin-left: 0px; margin-right: auto;
+            text-align: left; line-height: 40pt; font-family: メイリオ;
+            font-size: 120%; color: #eeeeee; font-weight: lighter;
+            letter-spacing: 0.1em; z-index: 2;">
+                <font size="5" color="#00f000">dispImage　</font>
+                <font size="3" color="#f0f0f0">Windows11</font><br />
+            </p>
+
+            <div style="position: relative; margin-top: -30px;
+            width: auto; height: 2px; margin-left: 0px; margin-right: 120px;">
+                <img src="img\\bbb1.PNG" border="0" align="top" hspace="0"
+                     vspace="0" style="position: relative; top:0px; left:0px;
+                border-color:#ffffff;z-index: 1;width:100%;height:2px;">
+            </div>
+
+
+            <p style="position: relative; width:auto;margin-top: 0px;
+            height: auto;
+            margin-left: 0px; margin-right: auto;
+            text-align: left; line-height: 20pt; font-family: メイリオ;
+            font-size: 110%; color: #ffffff; font-weight: lighter;
+            letter-spacing: 0.1em; padding: 20px; z-index: 2; ">
+                ImageクラスおよびCImageクラスを用いた、簡易画像エディターです。
+                画像に滑らかなフリーハンドラインや、<br />テキストを描画することができます。
+                <br />
+                <br />
+                <font size="3" color="ffe0d0">
+                    フリーハンドラインは、簡単な手振れ補正を実装していて滑らかな曲線を描きます。また、ラインで
+                    囲われた外側を透明化して<br />
+                    アルファPNG画像の作成も可能です。<br />
+                    テキスト入力は、RichEditCtrlを利用した透明で回転可能なもので、回転中も
+                    入力可能ですが、ウィンドウへのメッセージを<br />横取りして処理することと
+                    一文字単位の描画となるため、文字数が多くなるとテキスト入力スピードが
+                    遅くなります。<br />
+                    フォント選択ダイアログ、カラー選択ダイアログも装備しています。
+
+                    <br />
+                </font>
+                <br />
+                <font size="3" color="ffffff">
+                    ■主な機能<br />
+                    ・対応フォーマットは、jpg,bmp,png,tif<br />
+                    ・ロード可能画像サイズ、16000×16000pixel<br />
+                    ・滑らかフリーハンドラインの描画<br />
+                    ・アルファPng画像の作成<br />
+                    ・回転しながらのテキスト入力<br />
+                    ・スクリーンのセンター中心の、マウスホイールによるズーム<br />
+                    ・マウスドラッグによる、スクロール<br />
+                    ・フォーマット変換セーブ<br />
+                </font>
+            </p>
+
+            <div id="left2" style="position: relative; margin-left: 280px; margin-top: 0px;
+            width: auto; height: auto; margin-right: auto; z-index: 2; ">
+
+                <div id="left3" style="position: relative; margin-left: 0px; margin-top: 0px;
+            width: 500px; height: auto; margin-right: auto; z-index: 2; ">
+                    <img src="img\\dispImage.jpg">
+                </div>
+
+
+                <div id="button1" style="position:  relative; margin-left: 0px;
+            margin-top: 40px; margin-right: auto;width: 400px; height: auto;
+            text-align: left; line-height: 40pt; font-size: 100%;
+            font-weight: lighter; color: #ffffff;
+            letter-spacing: 0.1em; font-family:メイリオ; z-index: 2;">
+                    <a href="" title="ダウンロード" color="000000" size="1">
+                        ■<font color="f0f0f0">フリーダウンロード</font>
+                        <font color="#00f000">dispImage.zip</font><br />
+                    </a>
+                </div>
+
+                <p style="height: 240px; position: relative; margin-left: 0px; margin-top: 0px;
+           margin-right: auto;width: auto; height: auto;
+           text-align: left; line-height: 16pt; font-size: 80%;
+           font-weight: lighter; color: #ffffff;
+           letter-spacing: 0.1em; font-family:メイリオ; z-index: 2;">
+
+                    ＜内容＞<br />
+                    ・dispImage.exe　　実行ファイル<br />
+                    <br />
+                    <br />
+                    ■<font size="3" color="f0a000">
+                        ※ソースファイルおよびソリューションファイルは、
+                        Boothにて入手可能です（有料です）。
+                    </font>
+
+                    <div id="button1" style="position:  relative; margin-left: 20px;
+                        margin-top: 0px; margin-right: auto;width: 160px; height: auto;
+                        text-align: left; line-height: 40pt; font-size: 100%;
+                        font-weight: lighter; color: #ffffff;
+                        letter-spacing: 0.1em; font-family:メイリオ; z-index: 2;">
+                        <a href="https://vcmfc.booth.pm/items/8881168" title="Boothのページへ" color="000000" size="1">
+                            <font color="#00e000" size="4">Boothのページへ</font><br />
+                        </a>
+                    </div>
+                </p>
+            </div>
+        </div>
+
+
+
+        <div class="section:last-child">
+            <div style="position: relative; margin-top: 140px;
+                width: 100%; height: 100px;
+                left: 0px; margin-right: 0px;
+                background-color:#606090;
+                text-align: left; line-height: 16pt; font-size: 80%;
+                font-weight: lighter; color: #ffffff;
+                letter-spacing: 0.1em;
+                padding-left: 10px;
+                font-family:メイリオ; z-index: 2;">
+                tkpoly studio
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
