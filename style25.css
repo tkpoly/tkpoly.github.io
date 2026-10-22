@@ -63,7 +63,7 @@ img {
 
 
 /*ドロップダウン・リスト--------------------------------------------------------*/
-/* ドロップボタンのスタイルを指定する */
+/* ドロップボタンの表題スタイルを指定する */
 .dropbtn {
     background-color: transparent;/*#0000d0;*/
     color: #cccccc;
@@ -99,7 +99,7 @@ img {
     display: none;
     position: absolute;
     margin-left: -10px;
-    background-color: rgba(50,50,50,0.7); /*#505050;*/
+    background-color: rgba(50,50,50,0.8); /*#505050;*/
     top:50px;
     width: 180px;
     min-width: 120px;
@@ -108,7 +108,7 @@ img {
     z-index: 2;
 }
 
-    /* ドロップダウン内のリンク */
+    /* ドロップダウン内リストのリンク */
     .dropdown-content a {
         /*height:24px;*/
         font-size:90%;
@@ -122,7 +122,7 @@ img {
         white-space: nowrap;
     }
 
-        /* ホバー時のドロップダウンリンクの色を変更する */
+        /* ホバー時のドロップダウンリストの色を変更する */
         .dropdown-content a:hover {
             color: #ffffff;
             /*text-decoration: underline;*/
