@@ -6,13 +6,13 @@
     <meta http-equiv="Content-Language" content="ja">
     <meta http-equiv="Content-Script-Type" content="text/javascript">
     <meta http-equiv="Content-Style-Type" content="text/css">
-    <meta name="Description" content="VC++/MFCにおける、DirectX11によるテッセレーション">
+    <meta name="Description" content="DirectX11によるテッセレーション">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
       
     <script type="text/javascript" src="ss25.js" charset="UTF-8"></script>
     <link href="./style25.css" rel="stylesheet" type="text/css">
 
-    <title>DirectX11によるテッセレーション（tessellation）</title>
+    <title>テッセレーション（tessellation）</title>
 </head>
 
 <body onLoad="moveLeft();" onresize="moveLeft();">
@@ -76,13 +76,17 @@
                 <br />
                 <br />
                 <font size="3" color="ffe0d0">
-                    あああああああああああああああああああ
+                    球体テッセレーションのデモです。プログラムはDirectX11用のオブジェクトや
+                    テクスチャーを作成できるので、<br/>
+                    testサンプル以外にも、いろいろなオブジェクトで試すことができます。<br/>
+                    また、オブジェクトを右クリックすると、編集メニューが開き拡大縮小やコピーなども
+                    できます。
                     <br />
                 </font>
                 <br />
                 <font size="3" color="ffffff">
                     ■主な機能<br />
-                    ・平面テッセレーション<br />
+                    ・3Dテッセレーション<br />
                     ・テクスチャは、jpg,bmp,png,tif,標準的なRAW<br />
                     ・テクスチャサイズ、16000×16000pixel<br />
                 </font>
@@ -115,10 +119,11 @@
            letter-spacing: 0.1em; font-family:メイリオ; z-index: 2;">
 
                     ＜内容＞<br />
-                    ・tessellation　　　フォルダ（.h .cpp dx11.hlsl）<br />
-                    ・x64　　　　　　　 フォルダ（.exe）<br />
-                    ・tessellation.sln　ソリューション<br />
-                    ・README.md
+                    ・tessellation.exe　実行ファイル<br />
+                    ・dxd11.hlsl　　　　シェーダー・ファイル<br />
+                    ・PPDX11TEX　　　　テクスチャー編集用バックアップ・フォルダ<br />
+                    ・test.wrf　　　　　球ポリゴン・サンプル<br />
+                    ・test.jpg　　　　　テクスチャ・サンプル<br />
 
                 </p>
             </div>
