@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="ja">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta name="Description" content="DirectX11 イニシャライズ クラス化 ">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+      
+    <script type="text/javascript" src="ss25.js" charset="UTF-8"></script>
+    <link href="./style25.css" rel="stylesheet" type="text/css">
+
+    <title>DirectX11のイニシャライズをクラス化します</title>
+</head>
+
+<body onLoad="moveLeft();" onresize="moveLeft();">
+
+    <div class="dropdown" style="position:fixed; top:70px;
+        margin-left:auto; right:80px;z-index: 3;">
+        <button class="dropbtn">
+            <a href="index.html" style=" text-decoration: none;
+                 "><font color="#dddddd">ホームへ</font></a>
+        </button>
+        <div class="dropdown-content" style="line-height:10px">
+            <a href="imageViewer.html">imageViewer</a>
+            <a href="imageViewerD2D1.html">imageViewerD2D1</a>
+            <a href="gammaCorrCS.html">gammaCorrCS</a>
+            <a href="imageEditor.html">imageEditor</a>
+            <a href="dispImage.html">disspImage</a>
+            <a href="initDX11.html">initDX11</a>
+            <a href="tessellation.html">tessellation</a>
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <p style="position:relative; margin-top:20px;
+            height:auto;
+            margin-left:0px;  margin-right:auto;
+            text-align:center; line-height: 20pt;
+            font-family: メイリオ;font-size:120%;
+            color:#eeeeee; font-weight:lighter; letter-spacing: 0.1em;  z-index: 2;">
+            VC++MFC　サンプルコード　<font size="4">（Visual Studio 2022）</font><br />
+            <br />
+        </p>
+
+
+
+        <div id="left1">
+            <p style="position: relative; margin-top: 0px;
+            height:auto;
+            margin-left: 0px; margin-right: auto;
+            text-align: left; line-height: 40pt; font-family: メイリオ;
+            font-size: 120%; color: #eeeeee; font-weight: lighter;
+            letter-spacing: 0.1em; z-index: 2;">
+                <font size="5" color="#00f000">initDX11　</font>
+                <font size="3" color="#f0f0f0">Windows11</font><br />
+            </p>
+
+            <div style="position: relative; margin-top: -30px;
+            width: auto; height: 2px; margin-left: 0px; margin-right: 120px;">
+                <img src="img\\bbb1.PNG" border="0" align="top" hspace="0"
+                     vspace="0" style="position: relative; top:0px; left:0px;
+                border-color:#ffffff;z-index: 1;width:100%;height:2px;">
+            </div>
+
+
+            <p style="position: relative; width:auto;margin-top: 0px;
+            height: auto;
+            margin-left: 0px; margin-right: auto;
+            text-align: left; line-height: 20pt; font-family: メイリオ;
+            font-size: 110%; color: #ffffff; font-weight: lighter;
+            letter-spacing: 0.1em; padding: 20px; z-index: 2; ">
+                DirectX11のdevaiceなどポインターの取得および初期化を行うクラスと、描画クラス
+                をそれぞれ別クラスで構成します。
+                <br />
+                <br />
+                <font size="3" color="ffe0d0">
+                    初期化や描画を一つのクラスに置くと、処理によってはひじょうにコードが長くなり
+                    編集がしずらい場合があります。<br />
+                    さらにこれにコンピュートシェーダーなどが加わると、いっそう複雑になります。<br />
+                    そこで、それぞれのクラスを作り、初期化クラスで取得したポインタを共有構造体
+                    を介して、描画クラスなどに貸し出します。<br />
+                    ただしこの場合、どのクラスがどのクラスを実行するのかという親子関係とか、
+                    ポインターのReleaseなどには十分注意が<br />必要となります。<br />
+
+                    <br />
+                    <br />
+                </font>
+                <br />
+                <font size="3" color="ffffff">
+                    ■主な機能<br />
+                    ・球体サンプルの描画<br />
+                    ・対応フォーマットは、jpg,bmp,png,tif,標準的なRAW<br />
+                    ・ロード可能画像サイズ、16000×16000pixel<br />
+                </font>
+                <br />
+                <font size="3" color="ffffff">
+                    ■特徴<br />
+                       <font color="e0e0ff">
+                           ・MFCメイン<br />
+                           ・ボタンクラス<br />
+                           ・DirectC11のDeviceのイニシャライズクラス<br />
+                           ・DrectX11の描画クラス<br />
+                           ・WICTextureLoaderクラス<br />
+                           ・共有ヘッダー（Deviceポインタの貸出倉庫）<br />
+                       </font>
+                </font>
+            </p>
+
+            <div id="left2" style="position: relative; margin-left: 0px; margin-top: 0px;
+            width: auto; height: auto; margin-right: auto; z-index: 2; ">
+
+                <div id="left3" style="position: relative; margin-left: 0px; margin-top: 0px;
+                    width: 500px; height: auto; margin-right: auto; z-index: 2; ">
+                    <img src="img\\initDX11.jpg">
+                </div>
+            </div>
+
+            <div id="left5" style="position: relative; margin-left: 40px; margin-top: 60px;
+                width: auto; height: auto; margin-right: auto; z-index: 2; ">
+
+                <div id="button1" style="position:  relative; margin-left: 0px;
+            margin-top: 20px; margin-right: auto;width: auto; height: auto;
+            text-align: left; line-height: 40pt; font-size: 100%;
+            font-weight: lighter; color: #ffffff;
+            letter-spacing: 0.1em; font-family:メイリオ; z-index: 2;">
+                    <a href="" title="ダウンロード" color="000000" size="1">
+                        ■<font color="f0f0f0">フリーダウンロード</font>
+                        <font color="#00f000">initDX11.zip</font><br />
+                    </a>
+                </div>
+
+                <p style="height: 240px; position: relative; margin-left: 0px; margin-top: 0px;
+           margin-right: auto;width: auto; height: auto;
+           text-align: left; line-height: 16pt; font-size: 80%;
+           font-weight: lighter; color: #ffffff;
+           letter-spacing: 0.1em; font-family:メイリオ; z-index: 2;">
+
+                    ＜内容＞<br />
+                    ・initDX11.exe　　　実行ファイル<br />
+                    ・dx11.hlsl　　　　　バーテックスシェーダー,ピクセルシェーダー<br />
+                    ・README.md<br />
+                    <br />
+                    <br />
+
+                </p>
+            </div>
+        </div>
+
+        <div id="left6">
+            <div class="section:last-child">
+                <div style="position: relative; margin-top: 140px;
+                width: 100%; height: 100px;
+                margin-left: 0px; margin-right: 0px;
+                background-color:#606090;
+                text-align: left; line-height: 16pt; font-size: 80%;
+                font-weight: lighter; color: #ffffff;
+                letter-spacing: 0.1em;
+                padding-left: 10px;
+                font-family:メイリオ; z-index: 2;">
+                    tkpoly studio
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
